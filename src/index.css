@@ -48,7 +48,7 @@ h1{
   -o-border-radius: 50px;
 }
 
-.div-diasSemana{
+.div-container{
   text-align: center;
    
    
@@ -65,7 +65,9 @@ h1{
   -o-border-radius: 8px ;
 }
 
-.btn-dia{
+.link-aulas{
+  text-decoration: none;
+  background-color: white;
   padding: 8px;
   border-radius: 5px;
   margin: 4px;
@@ -74,3 +76,5 @@ h1{
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+
+ 

@@ -1,19 +1,21 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
-import { useDataDias } from '../hooks/useDataDias'
+import { Link } from "react-router-dom";
+import { useDataDias } from "../hooks/useDataDias";
+import Dia from "./Dia";
 
 const DiaSemana = () => {
   const dias = useDataDias();
   return (
-    <div className='div-diasSemana'>
+    <div className="div-container">
       <h3>Days of the Week</h3>
-       <div className='div-dias'>
+      <div className="div-dias">
         {dias.map((day) => (
-          <button className='btn-dia' key={day}>{day}</button>
+         <Link to="aulas" key={day}>
+         <Dia className='btn-dia' day ={day}/>
+       </Link>
         ))}
-       </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default DiaSemana
+export default DiaSemana;
