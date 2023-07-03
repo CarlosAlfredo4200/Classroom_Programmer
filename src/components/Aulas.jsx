@@ -1,43 +1,50 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 
-const ComponenteAulas = () => {
-  const [aulas, setAulas] = useState([false, false, false, false, false]);
+import { useData } from "../hooks/useData";
 
-  const [horario, setHorario] = useState("9 am");
+const CheckboxGroup = () => {
+  const [selectedValue, setSelectedValue] = useState("");
+  const { handleAulaChange, handleHoraChange } = useData();
 
-  const handleCheckboxChange = (index) => {
-    const nuevasAulas = [...aulas];
-    nuevasAulas[index] = !nuevasAulas[index];
-    setAulas(nuevasAulas);
+  const handleCheckboxChange = (value) => {
+    setSelectedValue(value === selectedValue ? "" : value);
+    handleAulaChange(value === selectedValue ? "" : value);
   };
 
   const handleHorarioChange = (event) => {
-    setHorario(event.target.value);
+    const newHora = event.target.value;
+    handleHoraChange(newHora);
   };
 
   return (
-    <div className="div-container">
-      <h3>Classrooms available</h3>
-      {aulas.map((aula, index) => (
-        <div key={index}>
+    <div className="div-checkbox">
+      <h3 className="div-checkbox-title">Select a checkbox</h3>
+      {[1, 2, 3, 4, 5].map((value) => (
+        <div key={value}>
           <input
             type="checkbox"
-            checked={aula}
-            onChange={() => handleCheckboxChange(index)}
-            />
-          <label>{`Aula ${index + 1}`}</label>
+            checked={selectedValue === value}
+            onChange={() => handleCheckboxChange(value)}
+          />
+          <label>{`Aula Nº: ${value}`}</label>
         </div>
       ))}
-
-      <h3>Schedules available</h3>
-      <select value={horario} onChange={handleHorarioChange}>
-        <option value="9 am">9 am</option>
-        <option value="10 am">10 am</option>
-        <option value="11 am">11 am</option>
-      </select>
+      <p>Selected value: {selectedValue}</p>
+      <div className="div-select">
+        <h3 className="div-checkbox-title">Select a schedule</h3>
+        <select className="caja" value="" onChange={handleHorarioChange}>
+          <option disabled value="">
+            Select a schedule
+          </option>
+          <option value="9 am">9 am</option>
+          <option value="10 am">10 am</option>
+          <option value="11 am">11 am</option>
+        </select>
+      </div>
+      <div></div>
     </div>
   );
 };
 
-export default ComponenteAulas;
+export default CheckboxGroup;

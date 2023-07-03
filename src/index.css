@@ -49,25 +49,34 @@ h1{
 }
 
 .div-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
    
    
-  padding: 20px;
+  padding: 5px;
 }
 
 .div-dias{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   background-color: #5c09d173;
-  padding: 10px;
+  padding: 15px;
   border-radius: 8px ;
   -webkit-border-radius: 8px ;
   -moz-border-radius: 8px ;
   -ms-border-radius: 8px ;
   -o-border-radius: 8px ;
+  
 }
 
 .link-aulas{
   text-decoration: none;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.888);
   padding: 8px;
   border-radius: 5px;
   margin: 4px;
@@ -76,5 +85,72 @@ h1{
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+.btn-continuar{
+  width: 100%;
+  margin: 20px 0;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.465);
+  border-radius: 4px;
+  text-decoration: none;
+  background: none;color: white;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
 
- 
+.div-checkbox{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+   
+}
+
+.div-checkbox-title{
+  text-align: center;
+  font-weight: 700;
+}
+
+.div-select{display: flex;
+  flex-direction: column;
+
+   
+}
+.caja {
+  margin:20px auto 40px auto;
+  border:1px solid #d9d9d982;
+  border-radius:4px;
+  padding: 10px;
+  height:40px;
+  overflow: hidden;
+  width: 230px;
+  position:relative;
+  color: white;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  -ms-border-radius:4px;
+  -o-border-radius:4px;
+}
+select {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 250px;
+}
+select:focus{ outline: none;}
+
+.caja::after{
+ content:"\025be";
+ display:table-cell;
+ padding-top:17px;
+ text-align:center;
+ width:30px;
+ height:40px;
+ background-color:#d9d9d9;
+ position:absolute;
+ top:0;
+ right:0px;	
+ pointer-events: none;
+}
